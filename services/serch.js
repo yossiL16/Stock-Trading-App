@@ -3,12 +3,12 @@ import {stockMarket} from "../data/stock-Market.js"
 
 export function searchStock(identifier) {
     let list = []
-    for(let i of stockMarket.stocks){
-        if(identifier === i.name){
-            list.push(i)
+    for(let stock of stockMarket.stocks){
+        if(identifier === stock.name){
+            list.push(stock)
         }
-        else if(identifier === i.id){
-            list.push(i)
+        else if(identifier === stock.id){
+            list.push(stock)
         }
        
     }
