@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync' 
-import {searchStock} from "./services/serch"
+import {searchStock} from "./services/serch.js"
 import {filterStocksByPrice} from "./services/filter.js"
 import {OperateOnStock} from "./services/operation.js"
 
@@ -23,18 +23,19 @@ switch (answer) {
             if (x === "1"){
                 let y = readlineSync.question("enter a identifier: ");
                 console.log(searchStock(y));}
+                
             else if(x ==="2"){
                 let d = readlineSync.question("enter a identifier: ");
                 console.log(searchStock(d))
-                break
+               
             }
             else{
                 console.log("You can only give 1 or 2.");
-                break
+                
             }
             break
-
         }
+        break
     case 2:
         let p = readlineSync.questionInt("enter a price ");
         let q = readlineSync.questionInt("for above enter 1. for below enter 2: ");
@@ -59,7 +60,7 @@ switch (answer) {
                 break
             }
         case 4:
-            plag = false
+            flag = false
             console.log("Thanks and good luck!!");
             break   
     }
