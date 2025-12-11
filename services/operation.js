@@ -7,7 +7,7 @@ import {updatePriceStock,updatePriceStockOuthers} from "../utils/updatePrice.js"
 
 export function OperateOnStock(operation, identifier){
     for(let indexStock in stockMarket.stocks){
-        if(identifier === stockMarket.idexStock.name){
+        if(identifier === stockMarket.stocks[indexStock].name){
             while(true){
             let amount = readlineSync.questionInt("Select the desired quantity: ");
             let check = updateStockCount(indexStock, amount, operation)
@@ -20,10 +20,10 @@ export function OperateOnStock(operation, identifier){
             }
         }
             updatePriceStock(indexStock, operation)
-            updatePriceStockOuthers(operation, stockMarket.indexStock.name, stockMarket.indexStock.category)
+            updatePriceStockOuthers(operation, stockMarket.stocks[indexStock].name, stockMarket.stocks[indexStock].category)
             
         }
-        else if(identifier === stockMarket.idexStock.id){
+        else if(identifier === stockMarket.stocks[indexStock].id){
                 while(true){
             let amount = readlineSync.questionInt("Select the desired quantity: ");
             let check = updateStockCount(indexStock, amount, operation)
@@ -36,7 +36,7 @@ export function OperateOnStock(operation, identifier){
             }
         }
             updatePriceStock(indexStock, operation)
-            updatePriceStockOuthers(operation, stockMarket.indexStock.name, stockMarket.indexStock.category)
+            updatePriceStockOuthers(operation, stockMarket.stocks[indexStock].name, stockMarket.stocks[indexStock].category)
             
         }
     }

@@ -3,7 +3,7 @@ import {stockMarket} from "../data/stock-Market.js"
 
 export function updateStockCount(index, amount ,operation) {
     if (operation === "buy"){
-    if (amount >= stockMarket.stocks[index].availableStocks){
+    if (amount <= stockMarket.stocks[index].availableStocks){
         stockMarket.stocks[index].availableStocks -= amount
         console.log("The shares were delisted");
         

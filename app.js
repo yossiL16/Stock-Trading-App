@@ -36,6 +36,7 @@ switch (answer) {
             break
         }
         break
+
     case 2:
         let p = readlineSync.questionInt("enter a price ");
         let q = readlineSync.questionInt("for above enter 1. for below enter 2: ");
@@ -47,7 +48,9 @@ switch (answer) {
             console.log(filterStocksByPrice(p, false));
             break
         }
+
         case 3:
+            while(true){
             let oper = readlineSync.question("enter your operation: ")
             if (oper === "buy"){
                 let indi = readlineSync.question("enter indifiner ")
@@ -59,6 +62,13 @@ switch (answer) {
                 OperateOnStock(oper, indi)
                 break
             }
+            else{
+                console.log("you can only enter sell or buy");
+                
+            }
+        }
+            break
+
         case 4:
             flag = false
             console.log("Thanks and good luck!!");
