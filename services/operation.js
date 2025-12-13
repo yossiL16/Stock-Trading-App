@@ -5,6 +5,7 @@ import {updatePriceStock,updatePriceStockOuthers} from "../utils/updatePrice.js"
 
 
 
+
 export function OperateOnStock(operation, identifier){
     for(let indexStock in stockMarket.stocks){
         if(identifier === stockMarket.stocks[indexStock].name){
